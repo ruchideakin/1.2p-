@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #3498db; /* Updated background color to a shade of blue */
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #fff; /* Header text color */
+    }
+    .quiz-container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff; /* Container background color */
+      border-radius: 10px; /* Increased border radius for a softer look */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Added box shadow for depth */
+    }
+    p {
+      margin: 10px 0;
+      color: #333; /* Text color */
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc; /* Input border color */
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+      color: #333; /* Result text color */
+    }
+  </style>
+</head>
+<body>
+  <h1>Mathematical Quiz</h1>
+  <div class="quiz-container">
+    <p id="question1">What is the product of 8 and 9?</p>
+    <input type="text" id="answer1">
+    <button id="submit1">Submit</button>
+    <p id="result1"></p>
+
+    <p id="question2">What is the difference between 15 and 7?</p>
+    <input type="text" id="answer2">
+    <button id="submit2">Submit</button>
+    <p id="result2"></p>
+  </div>
+
+  <script>
+    document.getElementById('submit1').addEventListener('click', function() {
+      const userAnswer1 = parseFloat(document.getElementById('answer1').value);
+      const correctAnswer1 = 8 * 9;
+      
+      if (userAnswer1 === correctAnswer1) {
+        document.getElementById('result1').textContent = 'Correct!';
+      } else {
+        document.getElementById('result1').textContent = 'Incorrect. Try again.';
+      }
+    });
+
+    document.getElementById('submit2').addEventListener('click', function() {
+      const userAnswer2 = parseFloat(document.getElementById('answer2').value);
+      const correctAnswer2 = 15 - 7;
+
+      if (userAnswer2 === correctAnswer2) {
+        document.getElementById('result2').textContent = 'Correct!';
+      } else {
+        document.getElementById('result2').textContent = 'Incorrect. Try again.';
+      }
+    });
+  </script>
+</body>
+</html>
